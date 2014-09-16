@@ -44,7 +44,7 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
     .state('home-logged-in', {
       url: '/logged-in?utm_medium&utm_source&utm_campaign&utm_content&utm_term',
       parent: 'navigation-layout',
-      templateUrl: 'home/home_logged_in.html',
+      templateUrl: 'pages/home_logged_in.html',
       data: {
         auth: true
       }
@@ -52,7 +52,7 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
     .state('home-logged-out', {
       url: '/welcome?utm_medium&utm_source&utm_campaign&utm_content&utm_term',
       parent: 'blank-layout',
-      templateUrl: 'home/home_logged_out.html'
+      templateUrl: 'pages/home_logged_out.html'
     })
 
     //
@@ -66,6 +66,18 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
         modal: {
           windowClass: 'login-modal'
         }
+      }
+    })
+
+    //
+    // Pages
+    //
+    .state('another-page', {
+      url: '/another-page',
+      parent: 'navigation-layout',
+      templateUrl: 'pages/another_page.html',
+      data: {
+        auth: true
       }
     })
 
@@ -107,7 +119,6 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
         }
       }
     })
-
 
     .state('modal-parent', {
       templateUrl: 'modal/modal_parent.html',

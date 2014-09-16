@@ -4,6 +4,11 @@
       <h2 class="panel-title">
         UI Router Demo
 
+        <div id="navigation-wrapper">
+          <a ui-sref="home-logged-in" ng-class="{ active: $state.is('home-logged-in') }">Home Page</a>
+          <a ui-sref="another-page" ng-class="{ active: $state.is('another-page') }">Another Page</a>
+        </div>
+
         <div class="pull-right">
           Welcome, {{principal.username}}
           <button type="button" class="btn btn-danger btn-xs" ng-click="logout()"><span class="glyphicon glyphicon-off"></span></button>
