@@ -1,11 +1,8 @@
-angular.module("app").controller("NavigationLayoutContainer", function($scope, $state) {
-  $scope.showAlert = true;
+angular.module("app").controller("NavigationLayoutContainer", function($scope, $localStorage) {
+  $scope.hideAlert = $localStorage.hideAlert;
 
   $scope.closeAlert = function() {
-    $scope.showAlert = false;
+    $scope.hideAlert = true;
+    $localStorage.hideAlert = true;
   };
-
-//  $scope.logout = function() {
-//    window.alert('Logging out');
-//  }
 });

@@ -3,5 +3,5 @@ angular.module("app").controller("ModalWithController", function($scope) {
     'Indiana',
     'Kentucky',
     'Ohio'
-  ]
+  ];
 });

@@ -1,34 +1,36 @@
 <div id="navigation-layout" class="container">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2 class="panel-title">
-        UI Router Demo
-
-        <div id="navigation-wrapper">
-          <a ui-sref="home-logged-in" ng-class="{ active: $state.is('home-logged-in') }">Home Page</a>
-          <a ui-sref="authenticated-page" ng-class="{ active: $state.is('authenticated-page') }">Authenticated Page</a>
-          <a ui-sref="titled" ng-class="{ active: $state.is('titled') }">Title & Metadata</a>
-          <a ui-sref="modals" ng-class="{ active: $state.is('modals') }">Modals</a>
-        </div>
-
-        <div class="pull-right">
-          Welcome, {{principal.getUsername()}}
-          <button type="button" class="btn btn-danger btn-xs" ng-click="logout()"><span class="glyphicon glyphicon-off"></span></button>
-        </div>
-
-      </h2>
-    </div>
-
-    <div class="view-content">
-      <div class="alert alert-success" ng-if="showAlert">
-        Thank you for logging in to the UI-Router Demo
-        <div class="pull-right">
-          <a role="button" ng-click="closeAlert()"><span class="glyphicon glyphicon-remove"></span></a>
-        </div>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <span class="navbar-brand">UI Router Demo</span>
       </div>
+      <ul class="nav navbar-nav">
+        <li><a ui-sref="home-logged-in" ng-class="{ active: $state.is('home-logged-in') }">Features</a></li>
+        <li><a ui-sref="authenticated-page" ng-class="{ active: $state.is('authenticated-page') }">Authenticated Page</a></li>
+        <li><a ui-sref="titled" ng-class="{ active: $state.is('titled') }">Title & Metadata</a></li>
+        <li><a ui-sref="modals" ng-class="{ active: $state.is('modals') }">Modals</a></li>
+        <li><a ui-sref="about-me" ng-class="{ active: $state.is('about-me') }">About Me</a></li>
+      </ul>
+      <p class="navbar-text navbar-right">
+        Welcome, {{principal.getUsername()}}
+        <button type="button" class="btn btn-danger btn-xs" ng-click="logout()"><span class="glyphicon glyphicon-off"></span></button>
+      </p>
+    </div>
+  </nav>
+  <div class="panel panel-default">
+    <div class="panel-body">
 
-      <!-- Nested page content will be injected here -->
-      <div ui-view></div>
+      <div class="view-content">
+        <div class="alert alert-success" ng-if="!hideAlert">
+          Thank you for logging in to the UI-Router Demo
+          <div class="pull-right">
+            <a role="button" ng-click="closeAlert()"><span class="glyphicon glyphicon-remove"></span></a>
+          </div>
+        </div>
+
+        <!-- Nested page content will be injected here -->
+        <div ui-view></div>
+      </div>
     </div>
   </div>
 </div>

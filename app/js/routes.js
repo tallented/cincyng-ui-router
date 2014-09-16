@@ -113,6 +113,15 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
         }
       }
     })
+    .state('about-me', {
+      url: '/about-me',
+      parent: 'navigation-layout',
+      templateUrl: 'pages/about_me.html',
+      data: {
+        auth: true
+      }
+    })
+
 
     //
     // Modals
