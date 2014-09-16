@@ -70,6 +70,62 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
     })
 
     //
+    // Modals
+    //
+    .state('modal-with-url', {
+      url: "/modal-with-url",
+      templateUrl: 'modal/modal_with_url.html',
+      data: {
+        modal: true
+      }
+    })
+
+    .state('modal-requiring-auth', {
+      url: '/modal-requiring-auth',
+      templateUrl: 'modal/modal_requiring_auth.html',
+      data: {
+        modal: true,
+        auth: true
+      }
+    })
+
+    .state('modal-with-options', {
+      templateUrl: 'modal/modal_with_options.html',
+      data: {
+        modal: {
+          windowClass: 'modal-with-options-modal',
+          size: 'sm',
+          backdrop: 'static'
+        }
+      }
+    })
+
+
+    .state('modal-parent', {
+      templateUrl: 'modal/modal_parent.html',
+      data: {
+        modal: {
+          size: 'lg'
+        }
+      }
+    })
+
+    .state('modal-child', {
+      templateUrl: 'modal/modal_child.html',
+      data: {
+        modal: true
+      }
+    })
+
+    .state('modal-closing-others', {
+      templateUrl: 'modal/modal_closing_others.html',
+      data: {
+        modal: true,
+        closePriorModal: true
+      }
+    })
+
+    //
     // Error Pages
     //
     .state('404', {
