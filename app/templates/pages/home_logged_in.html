@@ -1,11 +1,20 @@
 <div class="container">
+  <h4 >Demo Features</h4>
   <ul>
+    <li>Home state redirecting to Logged in / Logged out pages using "/" root URL</li>
+    <li>Parent Layouts</li>
     <li>URL passing parameters (e.g. - Google Analytics utm params) <a href="?utm_content=ui-router-demo&utm_channel=demo&utm_medium=gaslight" target="_blank">through a state</a></li>
-    <li>Modal with a URL <a href="/modal-with-url">in the same window</a></li>
-    <li>Modal with a URL <a href="/modal-with-url" target="_blank">in a new window</a></li>
-    <li>This modal requires authentication <a ng-click="$state.go('modal-requiring-auth')">in-app</a> or <a href="/modal-requiring-auth" target="_blank">direct via URL</a></li>
-    <li><a ng-click="$state.go('modal-with-controller')">Modal with a Controller</a></li>
-    <li><a ng-click="$state.go('modal-with-options')">Modal with UI-Modal options</a></li>
-    <li><a ng-click="$state.go('modal-parent')">Parent modal</a></li>
+    <li>States that require authentication with redirection to the prior state after login</li>
+    <li>
+      <a ui-sref="modals">Modal examples</a>
+      <ul>
+        <li>Open modal automatically on state change</li>
+        <li>Close prior modal as an option</li>
+        <li>Pass-through UI-Modal settings</li>
+        <li>Direct access a Modal with URL and return to home when the modal is closed</li>
+        <li>Page Contexts setting Title and Metadata</li>
+      </ul>
+    </li>
+    <li><a ui-sref="not-found">404 Page</a></li>
   </ul>
 </div>

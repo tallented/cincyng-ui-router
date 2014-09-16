@@ -6,11 +6,12 @@
 
         <div id="navigation-wrapper">
           <a ui-sref="home-logged-in" ng-class="{ active: $state.is('home-logged-in') }">Home Page</a>
-          <a ui-sref="another-page" ng-class="{ active: $state.is('another-page') }">Another Page</a>
+          <a ui-sref="modals" ng-class="{ active: $state.is('modals') }">Modals</a>
+          <a ui-sref="authenticated-page" ng-class="{ active: $state.is('authenticated-page') }">Authenticated Page</a>
         </div>
 
         <div class="pull-right">
-          Welcome, {{principal.username}}
+          Welcome, {{principal.getUsername()}}
           <button type="button" class="btn btn-danger btn-xs" ng-click="logout()"><span class="glyphicon glyphicon-off"></span></button>
         </div>
 

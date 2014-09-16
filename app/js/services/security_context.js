@@ -1,11 +1,14 @@
 angular.module("app").factory('SecurityContext', function ($rootScope, $localStorage) {
   var factory = {
-    username: null,
     authToken: null,
 
     login: function (username) {
-      factory.username = username;
+      $localStorage.username = username;
       $localStorage.loggedIn = true;
+    },
+
+    getUsername: function() {
+      return $localStorage.username;
     },
 
     isLoggedIn: function () {
@@ -14,7 +17,7 @@ angular.module("app").factory('SecurityContext', function ($rootScope, $localSto
 
     clear: function () {
       // Reset the values
-      factory.username = null;
+      $localStorage.username = null;
       $localStorage.loggedIn = false;
     }
   };

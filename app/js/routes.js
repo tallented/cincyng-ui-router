@@ -72,10 +72,18 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
     //
     // Pages
     //
-    .state('another-page', {
-      url: '/another-page',
+    .state('authenticated-page', {
+      url: '/authenticated-page',
       parent: 'navigation-layout',
-      templateUrl: 'pages/another_page.html',
+      templateUrl: 'pages/authenticated_page.html',
+      data: {
+        auth: true
+      }
+    })
+    .state('modals', {
+      url: '/modals',
+      parent: 'navigation-layout',
+      templateUrl: 'pages/modals.html',
       data: {
         auth: true
       }

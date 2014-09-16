@@ -1,0 +1,10 @@
+<div class="container">
+  <ul>
+    <li>Modal with a URL <a href="/modal-with-url">in the same window</a></li>
+    <li>Modal with a URL <a href="/modal-with-url" target="_blank">in a new window</a></li>
+    <li>This modal requires authentication <a ng-click="$state.go('modal-requiring-auth')">in-app</a> or <a href="/modal-requiring-auth" target="_blank">direct via URL</a></li>
+    <li><a ng-click="$state.go('modal-with-controller')">Modal with a Controller</a></li>
+    <li><a ng-click="$state.go('modal-with-options')">Modal with UI-Modal options</a></li>
+    <li><a ng-click="$state.go('modal-parent')">Parent modal</a></li>
+  </ul>
+</div>
