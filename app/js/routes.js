@@ -42,7 +42,7 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
       }]
     })
     .state('home-logged-in', {
-      url: '/logged-in',
+      url: '/logged-in?utm_medium&utm_source&utm_campaign&utm_content&utm_term',
       parent: 'navigation-layout',
       templateUrl: 'home/home_logged_in.html',
       data: {
@@ -86,6 +86,14 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
       data: {
         modal: true,
         auth: true
+      }
+    })
+
+    .state('modal-with-controller', {
+      templateUrl: 'modal/modal_with_controller.html',
+      controller: 'ModalWithController',
+      data: {
+        modal: true
       }
     })
 
