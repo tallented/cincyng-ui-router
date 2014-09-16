@@ -33,6 +33,7 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
           utm_content: $stateParams.utm_content,
           utm_term: $stateParams.utm_term
         };
+
         if (SecurityContext.isLoggedIn()) {
           $state.go('home-logged-in', params, { reload: true });
         } else {
@@ -49,7 +50,7 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
       }
     })
     .state('home-logged-out', {
-      url: '/welcome',
+      url: '/welcome?utm_medium&utm_source&utm_campaign&utm_content&utm_term',
       parent: 'blank-layout',
       templateUrl: 'home/home_logged_out.html'
     })
