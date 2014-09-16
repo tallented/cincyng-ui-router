@@ -34,6 +34,8 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
           utm_term: $stateParams.utm_term
         };
 
+        // Note that this currently causes a JS "cannot read property of null" error
+        // See - https://github.com/angular-ui/ui-router/issues/326
         if (SecurityContext.isLoggedIn()) {
           $state.go('home-logged-in', params, { reload: true });
         } else {
@@ -72,6 +74,13 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
     //
     // Pages
     //
+    .state('home-no-layout', {
+      url: '/home-no-layout',
+      templateUrl: 'pages/home_logged_in.html',
+      data: {
+        auth: true
+      }
+    })
     .state('authenticated-page', {
       url: '/authenticated-page',
       parent: 'navigation-layout',
@@ -86,6 +95,22 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
       templateUrl: 'pages/modals.html',
       data: {
         auth: true
+      }
+    })
+    .state('titled', {
+      url: '/titled',
+      parent: 'navigation-layout',
+      templateUrl: 'pages/titled.html',
+      data: {
+        auth: true,
+        page: {
+          title: 'This page has a Title',
+          meta: {
+            'description': 'This is an example page that has a title and metadata',
+            'author': 'Chris Tallent',
+            'keywords': 'AngularJS,Javascript,UI-Router'
+          }
+        }
       }
     })
 

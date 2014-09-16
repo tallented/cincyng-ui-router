@@ -25,6 +25,6 @@ angular.module("app",
       $log.debug("You have logged out");
 
       SecurityContext.clear();
-      $state.go("home", { reload: true });
+      $state.go("home");
     };
   });

@@ -2,9 +2,10 @@
   <h4 >Demo Features</h4>
   <ul>
     <li>Home state redirecting to Logged in / Logged out pages using "/" root URL</li>
-    <li>Parent Layouts</li>
+    <li>Parent Layouts - (See <a ui-sref="home-no-layout">this page</a> without the parent layout)</li>
     <li>URL passing parameters (e.g. - Google Analytics utm params) <a href="?utm_content=ui-router-demo&utm_channel=demo&utm_medium=gaslight" target="_blank">through a state</a></li>
-    <li>States that require authentication with redirection to the prior state after login</li>
+    <li>States that <a ui-sref="authenticated-page">require authentication</a> with redirection to the prior state after login</li>
+    <li>Page Contexts setting <a ui-sref="titled">Title and Metadata</a></li>
     <li>
       <a ui-sref="modals">Modal examples</a>
       <ul>
@@ -12,7 +13,6 @@
         <li>Close prior modal as an option</li>
         <li>Pass-through UI-Modal settings</li>
         <li>Direct access a Modal with URL and return to home when the modal is closed</li>
-        <li>Page Contexts setting Title and Metadata</li>
       </ul>
     </li>
     <li><a ui-sref="404">404 Page</a></li>
