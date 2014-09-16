@@ -1,0 +1,22 @@
+{
+  "name": "ui-router-demo",
+  "title": "UI-Router Demo App",
+  "version": "0.0.1",
+  "private": true,
+  "author": {
+    "name": "Chris Tallent",
+    "company": "Glamhive, LLC"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.6.3",
+    "jasmine-given": "^2.6.2",
+    "lineman": "^0.34.0",
+    "lineman-angular": "^0.3.0",
+    "lineman-less": "0.0.1",
+    "protractor": "^1.2.0-beta1"
+  },
+  "scripts": {
+    "start": "lineman run",
+    "test": "lineman spec-ci"
+  }
+}

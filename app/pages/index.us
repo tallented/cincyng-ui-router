@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="AppController">
+  <head>
+    <title ng-bind="page.title">UI-Router Demo</title>
+
+    <!-- Page based meta tags -->
+    <meta ng-repeat="(name, value) in page.meta" name="{{name}}" value="{{value}}">
+
+    <base href="/"/>
+    <link rel="stylesheet" type="text/css" href="/css/app.css" media="all" />
+  </head>
+  <body>
+    <!-- Top-level UI-Router content injected here -->
+    <div id="view" ui-view></div>
+
+    <script type="text/javascript" src="/js/app.js"></script>
+  </body>
+</html>

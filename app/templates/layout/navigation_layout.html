@@ -1,0 +1,27 @@
+<div id="navigation-layout" class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        UI Router Demo
+
+        <div class="pull-right">
+          Welcome, {{principal.username}}
+          <button type="button" class="btn btn-danger btn-xs" ng-click="logout()"><span class="glyphicon glyphicon-off"></span></button>
+        </div>
+
+      </h3>
+    </div>
+
+    <div class="view-content">
+      <div class="alert alert-success" ng-if="showAlert">
+        Thank you for logging in to the UI-Router Demo
+        <div class="pull-right">
+          <a role="button" ng-click="closeAlert()"><span class="glyphicon glyphicon-remove"></span></a>
+        </div>
+      </div>
+
+      <!-- Nested page content will be injected here -->
+      <div ui-view></div>
+    </div>
+  </div>
+</div>
