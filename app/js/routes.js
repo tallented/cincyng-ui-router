@@ -25,7 +25,7 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
     //
     .state('home', {
       url: "/?utm_medium&utm_source&utm_campaign&utm_content&utm_term",
-      onEnter: ["$state", "$stateParams", "SecurityContext", function ($state, $stateParams, SecurityContext) {
+      onEnter: ["$state", "$stateParams", "$timeout", "SecurityContext", function ($state, $stateParams, $timeout, SecurityContext) {
         var params = {
           utm_medium: $stateParams.utm_medium,
           utm_source: $stateParams.utm_source,
@@ -37,9 +37,13 @@ angular.module("app").config(function ($stateProvider, $locationProvider, $urlRo
         // Note that this currently causes a JS "cannot read property of null" error
         // See - https://github.com/angular-ui/ui-router/issues/326
         if (SecurityContext.isLoggedIn()) {
-          $state.go('home-logged-in', params, { reload: true });
+          $timeout(function() {
+            $state.go('home-logged-in', params, { reload: true });
+          });
         } else {
-          $state.go('home-logged-out', params, { reload: true });
+          $timeout(function() {
+            $state.go('home-logged-out', params, { reload: true });
+          });
         }
       }]
     })
